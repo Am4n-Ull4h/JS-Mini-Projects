@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  *{
+    margin: 0%;
+    padding: 0%;
+  }
+  body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ball{
+    height: 80px;
+    width: 80px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    margin: 0;
+  }
+
+</style>
+<body>
+  <div class="ball"  ></div>
+
+
+
+
+  <script>
+    // function val(e){
+    //   console.log()
+    //   // if(key)
+    // }
+    let ball = document.querySelector(".ball")
+    
+
+    let body = document.querySelector("body")
+    let left = 0
+    let up = 0
+    let right = 0
+    let bottom = 0
+    body.addEventListener("keyup",(e)=>{
+      if(e.key == "ArrowRight"){
+        left += 20  
+        ball.style.marginLeft = left + "px";
+      }
+      if(e.key == "ArrowUp"){
+        up += 20  
+        ball.style.marginTop = -up + "px";
+      }
+      if(e.key == "ArrowLeft"){
+        right += 20  
+        ball.style.marginRight = right + "px";
+      }
+      if(e.key == "ArrowDown"){
+        bottom += 20  
+        ball.style.marginBottom = -bottom + "px";
+      }
+      
+
+    }
+    )
+
+
+
+    body.addEventListener("mousemove",(e)=>{
+      let x = e.clientX
+      let y = e.clientY
+      ball.style.left = x + "px"
+      ball.style.right = -x + "px"
+      ball.style.top = y + "px"
+      // ball.style.bottom = -y + "px"
+    })
+  </script>
+</body>
+</html>

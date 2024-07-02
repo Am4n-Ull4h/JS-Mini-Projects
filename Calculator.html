@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  *{
+    margin: 0%;
+    padding: 0%;
+  }
+  body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+    /* background: repeating-linear-gradient(20deg,red 0px 10px,orange 10px 20px,black 20px 30px,yellow 30px 40px); */
+    background: linear-gradient(black,green);
+  }
+  .grid{
+    display: grid;
+    width: 30%;
+    height: 70%;
+    justify-content: space-evenly;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+    border: 1px groove orange;
+  }
+  .child,.equal,.del,.ac{
+    height: 60px;
+    width: 60px;
+    background-color: rgb(114, 100, 100);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 900;
+    box-shadow: 0px 0px 10px 4px black;
+    cursor: pointer;
+    cursor: grab;
+
+  }
+  .child:active,.equal:active,.del:active,.ac:active{
+    cursor: grabbing;
+  }
+  p{
+    width: 28%;
+    height: 50px;
+    background-color: rgb(114, 100, 100);
+    box-shadow: 0px 0px 10px 4px black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 35px;
+    color: wheat;
+  }
+  </style>
+<body>
+  
+  <p></p>
+
+  <div class="grid">
+    <div class="ac">AC</div>
+    <div class=" del">DEL</div>
+    <div class="child">%</div>
+    <div class="child">/</div>
+    <div class="child">1</div>
+    <div class="child">2</div>
+    <div class="child">3</div>
+    <div class="child">*</div>
+    <div class="child">4</div>
+    <div class="child">5</div>
+    <div class="child">6</div>
+    <div class="child">-</div>
+    <div class="child">7</div>
+    <div class="child">8</div>
+    <div class="child">9</div>
+    <div class="child">+</div>
+    <div class="child">0</div>
+    <div class="child">00</div>
+    <div class="child">.</div>
+    <div class="equal">=</div>
+  </div>
+
+  
+  
+  <script>
+    
+
+    let child = document.querySelectorAll(".child")
+    let equal = document.querySelector(".equal")
+    let ac = document.querySelector(".ac")
+    let del = document.querySelector(".del")
+    let inp = document.querySelector("p")
+    // let value = inp.value
+
+    child.forEach((childs)=>{
+      childs.addEventListener("click",(e)=>{
+        // console.log(e.target.innerText)
+        inp.innerHTML += e.target.innerText
+      })
+    })
+
+    equal.addEventListener("click",()=>{
+      let data = eval(inp.innerHTML)
+      inp.innerHTML = data
+      // console.log(data)
+    })
+
+    ac.addEventListener("click",()=>{
+      inp.innerHTML = ""
+    })
+
+    del.addEventListener("click",()=>{
+      let arr = Array.from(inp.innerHTML)
+      arr.pop()
+      let newarr = arr.join('')
+      inp.innerHTML = newarr
+    })
+
+    
+    
+    
+
+
+
+
+    
+  </script>
+</body>
+</html>

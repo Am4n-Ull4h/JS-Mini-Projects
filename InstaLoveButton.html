@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<style>
+  *{
+    margin: 0%;
+    padding: 0%;
+  }
+  body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .instabtn{
+    height: 300px;
+    width: 200px;
+    background-color: silver;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background: url(/IMGS/jgj.png);
+    background-size: 100% 100%;
+  }
+ 
+</style>
+<body>
+  <div class="instabtn">
+    <i class="ri-heart-fill"></i>
+    </div>
+
+
+
+
+
+  <script>
+    let btn = document.querySelector(".instabtn")
+
+    // btn.style.background = "red"
+    let heart = btn.childNodes[1]
+
+    heart.style.color = "wheat"
+    heart.style.fontSize = "30px"
+    heart.style.opacity = "0"
+    heart.style.transition = ".2s"
+    // heart.style.position = "absolute"
+    // heart.style.bottom = "-30px"
+    // console.log(heart)
+    
+    let ab = true
+    btn.addEventListener("dblclick",()=>{
+      if(ab){
+        heart.style.color = "red"
+        heart.style.opacity = "1"
+        heart.style.transform = "scale(2.5)"
+
+
+        ab = false
+
+      }
+      else{
+        heart.style.color = "wheat"
+        heart.style.opacity = "0"
+        heart.style.transform = "scale(1)"
+
+        ab = true
+      }
+      
+    })
+  </script>
+</body>
+</html>

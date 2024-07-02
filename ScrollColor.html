@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .div{
+    height: 50vh;
+    background-color: red;
+    border: 2px solid orange;
+  }
+  body{
+    height: 200vh;
+  }
+</style>
+<body>
+  <div class="div"></div>
+
+
+
+
+
+  <script>
+
+    let body = document.querySelector("body")
+    let div = document.querySelector(".div")
+
+    // console.log(document.documentElement.scrollHeight)
+    // console.log( window.innerHeight)
+    // console.log( window.scrollY)
+
+    // window.addEventListener("scroll",(e)=>{
+    //   let scr = document.documentElement.scrollHeight - document.documentElement.scrollHeight +100
+    //   let scroll = window.scrollY
+    //   console.log(scr,scroll)
+    //   if(scr === Math.ceil(scroll)){
+    //     div.style.background = "red"
+    //   }
+     
+    // })
+
+    window.addEventListener("scroll",(e)=>{
+        let topp = document.documentElement.scrollTop + 200
+      let src =  window.Math.ceil(scrollY)
+
+      if(src<50){
+        div.style.background = "red"
+        div.style.borderRadius = "0%"
+
+      }
+      else{
+        div.style.background = "black"
+        div.style.borderRadius = "50%"
+
+      }
+
+    })
+
+
+    </script>
+</body>
+</html>

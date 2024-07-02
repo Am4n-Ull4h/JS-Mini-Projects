@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .user1{
+    height: 50px;
+    width: 50px;
+    background-color: aqua;
+    border-radius: 50%;
+    position: absolute;
+
+  }
+  .user2{
+    height: 50px;
+    width: 50px;
+    background-color: rgb(0, 85, 255);
+    border-radius: 50%;
+    display: none;
+    position: absolute;
+
+
+  }
+  .user3{
+    height: 50px;
+    width: 50px;
+    background-color: rgb(255, 221, 0);
+    border-radius: 50%;
+    display: none;
+    position: absolute;
+
+
+  }
+  .user4{
+    height: 50px;
+    width: 50px;
+    background-color: rgb(234, 0, 255);
+    border-radius: 50%;
+    display: none;
+    position: absolute;
+  }
+
+
+  *{
+    margin: 0%;
+    padding: 0%;
+  }
+  .main{
+    height: 100vh;
+    width: 100%;
+    background: repeating-conic-gradient( red 0deg 90deg, green 90deg 180deg, blue 180deg 270deg,yellow 270deg 360deg );
+    display: grid;
+    gap: 1px;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+  }
+  .child{
+    background-color: silver;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 3px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: none;
+  }
+
+  .player1{
+    grid-area: 1/1/span 6/span 6;
+    background-color: yellow;
+    cursor: pointer;
+
+  }
+
+  
+  .player2{
+    grid-area: 1/10/span 6/span 6;
+    background-color: red;
+  }
+
+  .center{
+    grid-area: 7/7/span 3/span 3;
+    background: repeating-conic-gradient( red 0deg 90deg, green 90deg 180deg, blue 180deg 270deg,yellow 270deg 360deg );
+  }
+
+  .player3{
+    grid-area: 10/1/span 6/span 6;
+    background-color: blue;
+  }
+  .player4{
+    grid-area: 10/10/span 6/span 6;
+    background-color: green;
+
+  }
+  .yellowStart{
+    background: url(https://img.icons8.com/?size=160&id=tKD3C7EOcsTX&format=png);
+    background-size: 100% 100%;
+    /* transform: rotateY(180deg); */
+  }
+  .yellowEnd{
+    background: url(https://img.icons8.com/?size=160&id=tKD3C7EOcsTX&format=png);
+    background-size: 100% 100%;
+    /* transform: rotateY(180deg); */
+  }
+  .redStart{
+    background: url(https://img.icons8.com/?size=160&id=tKD3C7EOcsTX&format=png);
+    background-size: 100% 100%;
+    /* transform: rotateY(180deg); */
+  }
+  .redEnd{
+    background: url(https://img.icons8.com/?size=160&id=tKD3C7EOcsTX&format=png);
+    background-size: 100% 100%;
+    /* transform: rotateY(180deg); */
+  }
+  .blueStart{
+    background: url(https://img.icons8.com/?size=160&id=tKD3C7EOcsTX&format=png);
+    background-size: 100% 100%;
+    transform: rotateY(180deg);
+  }
+  .blueEnd{
+    background: url(https://img.icons8.com/?size=160&id=tKD3C7EOcsTX&format=png);
+    background-size: 100% 100%;
+    transform: rotateY(180deg);
+  }
+
+  .greenStart{
+    background: url(https://img.icons8.com/?size=160&id=tKD3C7EOcsTX&format=png);
+    background-size: 100% 100%;
+    transform: rotateY(180deg);
+  }
+  .child h1{
+    background-color: sienna;
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: black ;
+    /* color: transparent; */
+    opacity: 0;
+  }
+  .player1 h1{
+    color: rgb(255, 251, 1);
+    opacity: 1;
+
+  }
+  .player2 h1{
+    color: red;
+  }
+  .player3 h1{
+    color: rgb(20, 0, 235);
+  }
+  .player4 h1{
+    color: green;
+  }
+
+</style>
+<body>
+  <!-- <div class="user1"></div>
+  <div class="user2"></div>
+  <div class="user3"></div>
+  <div class="user4"></div> -->
+
+  <div class="main">
+    <button class="child player1">
+      <h1>Your Turn</h1>
+    </button>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <button class="child player2">
+      <h1>Your Turn</h1>
+    </button>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child redStart"></div>
+    <div class="child yellowEnd"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child yellowStart"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child center"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child redEnd"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child   blueEnd"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child greenStart"></div>
+    <div class="child"></div>
+    <button class="child player3">
+      <h1>Your Turn</h1>
+    </button>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <button class="child player4">
+      <h1>Your Turn</h1>
+    </button>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child blueEnd"></div>
+    <div class="child blueStart"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+
+
+  </div>
+
+
+
+
+
+
+  <script>
+    let user1 = document.querySelector(".user1")
+    let user2 = document.querySelector(".user2")
+    let user3 = document.querySelector(".user3")
+    let user4 = document.querySelector(".user4")
+
+
+
+
+
+    let player1 = document.querySelector(".player1")
+    let player2 = document.querySelector(".player2")
+    let player3 = document.querySelector(".player3")
+    let player4 = document.querySelector(".player4")
+    player1.disabled = false
+    player2.disabled = true
+    player3.disabled = true
+    player4.disabled = true
+
+
+    let h1 = document.querySelectorAll("h1")[0]
+    let h2 = document.querySelectorAll("h1")[1]
+    let h3 = document.querySelectorAll("h1")[2]
+    let h4 = document.querySelectorAll("h1")[3]
+
+    player1.addEventListener("click",(e)=>{
+    player1.disabled = true
+    player2.style.cursor = "none"
+    player3.style.cursor = "none"
+    player4.style.cursor = "none"
+    
+    let x = Math.floor((Math.random()*6)+1)
+    
+    h1.innerHTML = x
+    
+    
+    setTimeout(()=>{
+      player1.style.cursor = "none"
+    player2.style.cursor = "pointer"
+      player2.disabled = false
+      h1.style.opacity = "0"
+      h2.style.opacity = "1"
+    h1.innerHTML = "Your Turn"
+      
+    },3000)
+
+    })
+
+    player2.addEventListener("click",(e)=>{
+    player2.disabled = true
+    
+    
+    let x = Math.floor((Math.random()*6)+1)
+    h2.innerHTML = x
+    
+    setTimeout(()=>{
+      player2.style.cursor = "none"
+    player4.style.cursor = "pointer"
+      player4.disabled = false
+      h2.style.opacity = "0"
+      h4.style.opacity = "1"
+      h2.innerHTML = "Your Turn"
+    },3000)
+
+    })
+
+    player4.addEventListener("click",(e)=>{
+    player4.disabled = true
+    
+    
+    let x = Math.floor((Math.random()*6)+1)
+    h4.innerHTML = x
+    
+    setTimeout(()=>{
+      player4.style.cursor = "none"
+    player3.style.cursor = "pointer"
+      player3.disabled = false
+      h4.style.opacity = "0"
+      h3.style.opacity = "1"
+      h4.innerHTML = "Your Turn"
+    },3000)
+
+    })
+
+    player3.addEventListener("click",(e)=>{
+    player3.disabled = true
+    
+    
+    let x = Math.floor((Math.random()*6)+1)
+    h3.innerHTML = x
+    
+    setTimeout(()=>{
+      player3.style.cursor = "none"
+    player1.style.cursor = "pointer"
+      player1.disabled = false
+      h3.style.opacity = "0"
+      h1.style.opacity = "1"
+      h3.innerHTML = "Your Turn"
+    },3000)
+
+    })
+
+
+
+
+
+
+    let child = document.querySelectorAll(".child")
+    console.log(child)
+    
+    
+    // let top1 = 0
+    // let left1 = 0
+    // user1.addEventListener("click",()=>{
+    //   // user1.style.display = "none"
+    //   // user2.style.display = "block"
+    //   let x = Math.floor(Math.random() *7)
+    //   let op = Math.floor(Math.random() *7)
+    //   user1Turn(x)
+    //   console.log(x)
+    //   console.log(op)
+      
+    // })
+    
+    
+    // function user1Turn(x,op){
+      
+
+
+    //   let open = false
+    //   if(op==6){
+    //     top1+=60
+    //     left1+=60
+    //     user1.style.top = top1 + "px"
+    //     user1.style.left = left1 + "px"
+    //     open = true
+    //   }
+
+    //   if(open){
+    //     if(x==6){
+    //     left1+=60
+    //     user1.style.left = left1 + "px"
+    //     open = true
+    //   }
+    //     if(x==5){
+    //     // top+=20
+    //     left1+=50
+    //     // user1.style.top = top + "px"
+    //     user1.style.left = left1 + "px"
+    //   }
+    //   if(x==4){
+    //     // top+=20
+    //     left1+=40
+    //     // user1.style.top = top + "px"
+    //     user1.style.left = left1 + "px"
+    //   }
+    //   if(x==3){
+    //     // top+=20
+    //     left1+=30
+    //     // user1.style.top = top + "px"
+    //     user1.style.left = left1 + "px"
+    //   }
+    //   if(x==2){
+    //     // top+=20
+    //     left1+=20
+    //     // user1.style.top = top + "px"
+    //     user1.style.left = left1 + "px"
+    //   }
+    //   if(x==1){
+    //     // top+=20
+    //     left1+=10
+    //     // user1.style.top = top + "px"
+    //     user1.style.left = left1 + "px"
+    //   }
+
+    //   }
+     
+
+    // }
+
+    // user2.addEventListener("click",()=>{
+    //   user2.style.display = "none"
+    //   user3.style.display = "block"
+    //   user1Turn()
+
+    // })
+
+    // user3.addEventListener("click",()=>{
+    //   user3.style.display = "none"
+    //   user4.style.display = "block"
+    //   user1Turn()
+
+    // })
+
+    // user4.addEventListener("click",()=>{
+    //   user4.style.display = "none"
+    //   user1.style.display = "block"
+    //   user1Turn()
+
+    // })
+
+
+  </script>
+</body>
+</html>

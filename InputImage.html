@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .main{
+    height: 500px;
+    width: 500px;
+    background-color: orange;
+    display: flex;
+
+  }
+  .child{
+    height: 80px;
+    width: 80px;
+    background-color: cyan;
+    border-radius: 50%;
+  }
+  .child img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+  }
+</style>
+<body>
+  <div class="main">
+
+  </div>
+  <input type="file" onchange="vall()">
+
+
+  <script>
+
+    
+    let main = document.querySelector(".main")
+    let inp = document.querySelector("input")
+
+    let arr = []
+    let nm = 0
+    function vall(){
+      // let userChoice = parseInt(prompt("Enter your number"))
+    
+    
+    
+
+    inp.addEventListener("change",()=>{
+      nm++
+       x = inp.files[nm]
+      arr[nm] = x
+      console.log(nm)
+
+    })
+    // console.log(nm)
+    // console.log(arr)
+
+    // console.log(arr.length)
+
+
+
+    for(let i=0;i<=arr.length;i++){
+      // main.innerHTML += `<div class="child"></div>`
+
+      let div = document.createElement("div")
+      div.setAttribute("class","child")
+      main.appendChild(div)
+      // console.log(div)
+      // main.innerHTML = div
+      // console.log("Hello")
+    }
+    let child = document.querySelectorAll(".child")
+
+    // let arr = []
+    child.forEach((val)=>{
+      console.log(val)
+      let img = document.createElement("img")
+      img.src  = URL.createObjectURL(inp.files[0])
+      val.appendChild(img)
+    })
+    }
+
+    
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <button>Click</button> -->
+  <p>0</p>
+
+
+  <script>
+    let body = document.querySelector("body")
+    document.querySelector("body").style.display = "flex"
+    document.querySelector("body").style.justifyContent = "center"
+    document.querySelector("body").style.alignItems = "center"
+    document.querySelector("body").style.height = "100vh"
+    body.style.margin = "0"
+    body.style.overflow = "hidden"
+
+
+
+
+
+
+
+
+
+    let card = document.createElement("div")
+    document.body.appendChild(card)
+    card.style.borderRadius = "20px"
+    card.style.height = "500px"
+    card.style.width = "300px"
+    card.style.background = "silver"
+    card.style.position = "absolute"
+    card.style.display = "none"
+
+    card.style.display = "flex"
+    card.style.flexDirection = "column"
+    card.style.justifyContent = "center"
+    card.style.alignItems = "center"
+
+
+
+    let img = document.createElement("img")
+    img.setAttribute("src","/IMGS/Untitled.png")
+    card.appendChild(img)
+
+    img.style.height = "50%"
+    img.style.width = "100%"
+    img.style.borderRadius = "20px"
+
+    let p =document.querySelector("p")
+
+
+    let pp = document.createElement("p")
+    pp.innerHTML = "Stranger"
+    pp.style.color = "red"
+    pp.style.fontSize = "25px"
+
+    img.after(pp)
+
+
+
+
+    let btn = document.createElement("button")
+    btn.innerHTML = "Add Friend"
+    card.appendChild(btn)
+
+    btn.style.padding="10px"
+    btn.style.borderRadius="10px"
+    btn.style.outline="none"
+    btn.style.border="1px solid red"
+    btn.style.background="transparent"
+
+
+    let cc=1
+    btn.addEventListener("click",()=>{
+      if(cc === 1){
+        pp.style.color = "green"
+      pp.innerHTML = "Friend"
+      cc = 0;
+      console.log("0")
+        btn.innerHTML = "Remove Friend"
+      }
+      else{
+        pp.style.color = "red"
+      pp.innerHTML = "Stranger"
+      cc = 1;
+      console.log("1")
+      btn.innerHTML = "Add Friend"
+
+
+
+      }
+    })
+
+
+
+
+    // body.addEventListener("mousemove",(e)=>{
+    //   let x = e.clientX
+    //   let y = e.clientY
+
+    //   // console.log(e)
+      
+    //   card.style.top = y + -200 +"px"
+    //   card.style.left = x + -150+ "px"
+    // card.style.display = "block"
+
+    // // let hh = document.createElement("p")
+    // // document.body.appendChild(hh)
+    // // hh.innerHTML = "0"
+    // p.innerHTML = x
+    // // hh.innerHTML = y
+    // // document.write(x)
+    // // console.clear()
+
+    // // console.log(hh)
+
+    // // let kk = hh.innerHTML;
+    // // console.log(kk)
+
+    // // if(kk != 0){
+    // //   kk = 0
+    // //   console.log("Hello")
+    // //   console.log(kk)
+    // // }
+    
+
+    // // console.log(e)
+
+    // })
+
+
+
+    // body.addEventListener("mouseleave",(e)=>{
+    //   card.style.display = "none"
+
+    // })
+
+
+
+    
+
+  </script>
+</body>
+</html>
